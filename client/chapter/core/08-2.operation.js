@@ -49,3 +49,28 @@ let same = number[0] === number[1];
 // console.log('Design' <= 'Development');
 // console.log('디자인' <= '개발');
 console.clear();
+
+const str = 'BaNaNa';
+const invertCase = (str) => {
+  let result = '';
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === str[i].toUpperCase() && str[i] !== str[i].toLowerCase()) {
+      result += str[i].toLowerCase();
+    } else {
+      result += str[i].toUpperCase();
+    }
+  }
+
+  return result;
+};
+
+const result = invertCase(str);
+console.log(`result ${result}`);
+
+const nums = [1, 2, 3, 4, 5, 6];
+let sum = 0;
+for (let i = 0; i < nums.length; i++) {
+  sum += nums[i];
+}
+let mid = sum % nums.length;
+console.log(sum);
