@@ -95,21 +95,10 @@ let repeat = (text, repeatCount) => {
 console.log(repeat('hello*', 3));
 console.clear();
 
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const students = [
-  { name: '김철수', age: 20, score: 85 },
-  { name: '이영희', age: 22, score: 92 },
-  { name: '박민수', age: 19, score: 78 },
-  { name: '최지영', age: 21, score: 88 },
-];
+const calc = (str, pattern) => {
+  let strList = str.split(' ');
+  strList.map((item) => {});
+  console.log(strList);
+};
 
-
-let sum = 0;
-const aa = students.filter((v) => {
-  if (v.score >= 20) {
-    sum += v.score;
-    console.log(sum);
-  }
-});
-
-console.log(aa);
+console.log(calc('dog cat cat fish', 'abba')); //false가 나와야됨
