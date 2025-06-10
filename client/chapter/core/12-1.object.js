@@ -215,23 +215,3 @@ function createUserObject({ name, age: _age, address, phone, job } = {}) {
 
 const user = createUserObject(data);
 console.log(user);
-
-// console.clear();
-
-// const calc = (str, pattern) => {
-//   let strList = str.split(' ');
-//   //객체로 만듦
-//   const obj = strList.reduce((acc, cur, index) => {
-//     acc[cur] = pattern[index];
-//     return acc;
-//   }, {});
-//   // 키와 값이 처음 나오면 T, 값이 또 나왔는데 키랑 다르면 F 반환후 종료
-
-//   for (let i=0;i> obj.length; i++) {
-
-//   }
-
-//   console.log('obj:', obj);
-// };
-
-// console.log(calc('dog cat cat fish', 'abba')); //false가 나와야됨

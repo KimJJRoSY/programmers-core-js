@@ -59,3 +59,21 @@ const navigationMenu = {
     this.items.push(newItem);
   },
 };
+
+// console.clear();
+
+const calc = (str, pattern) => {
+  let strList = str.split(' ');
+  //객체로 만듦
+  const obj = strList.reduce((acc, cur, index) => {
+    acc[cur] = pattern[index];
+    return acc;
+  }, {});
+  // 만약 값이 같은데 키가 다르면 F 반환
+  console.log('obj', obj);
+  for (let i = 0; i < Object.keys(obj).length; i++) {
+    console.log(obj[i]);
+  }
+};
+
+console.log(calc('dog cat cat fish', 'abba')); //false가 나와야됨
