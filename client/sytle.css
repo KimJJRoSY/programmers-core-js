@@ -5,3 +5,27 @@
 .second {
   color: aquamarine;
 }
+span {
+  display: inline-block;
+}
+
+.space {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div {
+    position: absolute;
+  }
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: dodgerblue;
+}
