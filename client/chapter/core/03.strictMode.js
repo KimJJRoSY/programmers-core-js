@@ -10,3 +10,6 @@ console.log(jujeob);
 
 // #2
 console.log(this);
+
+
+let self ;
