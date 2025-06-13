@@ -17,7 +17,7 @@ export default defineConfig([
   {
     files: ['**/*.{js,mjs,cjs}'],
     languageOptions: {
-      globals: { ...globals.browser, ...globals.node, ...types },
+      globals: { ...globals.browser, ...globals.node, ...types, getNode: true },
     },
     rules: {
       'no-unused-vars': 'off',

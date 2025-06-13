@@ -3,10 +3,10 @@
 }
 
 .second {
-  color: aquamarine;
+  color: blueviolet;
 }
 span {
-  display: inline-block;
+  /* display: inline-block; */
 }
 
 .space {
