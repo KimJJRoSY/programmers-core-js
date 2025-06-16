@@ -6,6 +6,15 @@ const types = {
   isArray: true,
   isNull: true,
   isObject: true,
+  isString: true,
+  isUndefined: true,
+};
+
+const lib = {
+  getNode: true,
+  insertLast: true,
+  css: true,
+  attr: true,
 };
 
 export default defineConfig([
@@ -17,7 +26,7 @@ export default defineConfig([
   {
     files: ['**/*.{js,mjs,cjs}'],
     languageOptions: {
-      globals: { ...globals.browser, ...globals.node, ...types, getNode: true },
+      globals: { ...globals.browser, ...globals.node, ...types, ...lib },
     },
     rules: {
       'no-unused-vars': 'off',

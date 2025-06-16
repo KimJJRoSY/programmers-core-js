@@ -42,11 +42,12 @@ about.dataset.name = 'hello';
 about.dataset.name = 'bye';
 about.setAttribute('data-name', 'bye');
 //6. about의 클래스 속성 제거
-about.removerAttribute('class');
+about.removeAttribute('class');
 
 //7. about의 모든 속성 나열
 console.log(about.attributes);
 
+console.clear();
 
 /* 비표준 속성, 프로퍼티 설정 ------------------------------------------------- */
 
