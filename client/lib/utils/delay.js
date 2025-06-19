@@ -1,5 +1,7 @@
 import { getNode } from '../dom/getNode.js';
 import { isObject, isNumber } from './type.js';
+import { xhrPromise } from './xhr.js';
+import { insertLast } from '../dom/insert.js';
 
 // callback
 
@@ -64,7 +66,7 @@ function delayP(time, options) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (!shouldRejected) {
-        resolve({ name: 'aa', age: 40 });
+        resolve({ data });
       } else {
         reject({ message: err });
       }
@@ -72,27 +74,55 @@ function delayP(time, options) {
   });
 }
 
-delayP({
-  data: '....',
-});
+// delayP({
+//   data: '....',
+// });
 
 // const data = delayP();
 
-delayP()
-  .then(() => {
-    first.style.top = '-100px';
-    second.style.top = '100px';
+// delayP()
+//   .then(() => {
+//     first.style.top = '-100px';
+//     second.style.top = '100px';
 
-    return delayP();
-  })
+//     return delayP();
+//   })
 
-  .then((res) => {
-    first.style.transform = 'rotate(360deg)';
-    second.style.transform = 'rotate(-360deg)';
+//   .then((res) => {
+//     first.style.transform = 'rotate(360deg)';
+//     second.style.transform = 'rotate(-360deg)';
 
-    return delayP();
-  })
-  .then(() => {
-    first.style.top = 0;
-    second.style.top = 0;
+//     return delayP();
+//   })
+//   .then(() => {
+//     first.style.top = 0;
+//     second.style.top = 0;
+//   });
+
+/* async await */
+//async : 무조건 promise object를 리턴
+//await: 코드 실행 흐름 제어 result의 값을 꺼낼 수 있음
+async function f() {
+  return 10;
+}
+
+// const a = await f();
+
+async function delayA() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('success');
+    }, 200);
   });
+}
+// console.log(delayA());
+
+const result = await delayA();
+// console.log(result);
+
+async function getData() {
+  const data = await xhrPromise.get('https://pokeapi.co/api/v2/pokemon/1');
+  const src = data.sprites.other.showdown['front_default'];
+  insertLast(document.body, `<img src="${src}" alt=""/>`);
+}
+getData();
