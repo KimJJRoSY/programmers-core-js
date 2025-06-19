@@ -26,6 +26,7 @@ function xhr({
 
   xhr.open(method, url);
 
+  // 헤더가 양이 많아졌을 때 
   if (!(method === 'DELETE')) {
     Object.entries(headers).forEach(([k, v]) => {
       xhr.setRequestHeader(k, v);
@@ -62,6 +63,8 @@ const obj = {
 //   success: (data)=> console.log(data),
 //   fail: ({message})=> console.log(message),
 // })
+
+//compound pattern => 함수를 만들고 나를 다시 호출함 
 
 xhr.get = (url, success, fail) => {
   xhr({ url, success, fail });
