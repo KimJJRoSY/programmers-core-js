@@ -3,13 +3,13 @@ import { insertLast } from './insert.js';
 // 태그 생성 함수
 function createUserCard({
   id = '',
-  name = 'unknown',
+  username = 'unknown',
   email = 'unknown@unknown.com',
   website = 'www.unknown.com',
 }) {
   return `
       <article class="user-card" data-index="user-${id}">
-        <h3 class="user-name">${name}</h3>
+        <h3 class="user-name">${username}</h3>
         <div class="user-resouce-info">
           <div>
             <a class="user-email" href="mailto:${email}"
