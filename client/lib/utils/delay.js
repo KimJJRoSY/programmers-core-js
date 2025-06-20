@@ -47,7 +47,7 @@ const defaultOptions = {
   errorMessage: 'warn',
 };
 
-function delayP(time, options) {
+export function delayP(options) {
   // const config = {...defaultOptions,...options};
   let config = { ...defaultOptions };
 

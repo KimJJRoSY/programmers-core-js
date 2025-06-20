@@ -6,3 +6,5 @@ export * from './insert.js';
 export * from './getNode.js';
 export * from './clearContents.js';
 export * from './showAlert.js';
+export * from './userList.js';
+export * from './color.js';
