@@ -64,8 +64,8 @@ userCardInner.addEventListener('click', handleDelete);
 
 // 버튼 요소 먼저 잡기
 const createButton = getNode('.create');
-const cancelButton = getNode('.cancel');
-const doneButton = getNode('.done');
+const cancelButton = getNode('.create .cancel');
+const doneButton = getNode('.create .done');
 
 function handleCreate() {
   const pop = getNode('.pop');
@@ -80,7 +80,7 @@ function handleCreate() {
 // 버블링 주의해야됨 -> stopPropagation을 사용하는 이유
 function handleCancel(e) {
   e.stopPropagation();
-  gsap.to('.pop', {
+  gsap.to('.create .pop', {
     autoAlpha: 0,
   });
 }
@@ -101,7 +101,7 @@ function handleDone(e) {
     })
     .then(() => {
       //팝업창 닫기
-      gsap.to('.pop', {
+      gsap.to('.create .pop', {
         autoAlpha: 0,
       });
       //전체 컨텐츠 지움
@@ -117,3 +117,40 @@ function handleDone(e) {
 createButton.addEventListener('click', handleCreate);
 cancelButton.addEventListener('click', handleCancel);
 doneButton.addEventListener('click', handleDone);
+
+const registerButton = getNode('.register');
+const registerDancelButton = getNode('.register .cancel');
+const registerDoneButton = getNode('.register .done');
+
+function handleRegister() {
+  gsap.to('.register .pop', { autoAlpha: 1 });
+}
+
+function handleRegisterCancel(e) {
+  e.stopPropagation();
+  gsap.to('.register .pop', {
+    autoAlpha: 0,
+  });
+}
+
+function handleRegisterCreate(e) {
+  e.preventDefault();
+  const name = getNode('#create-name').value;
+  const password = getNode('#create-password').value;
+
+  nini.post('http://localhost:3000/register', {
+    email: name,
+    password: password,
+  });
+}
+
+registerButton.addEventListener('click', handleRegister);
+registerDancelButton.addEventListener('click', handleRegisterCancel);
+registerDoneButton.addEventListener('click', handleRegisterCreate);
+
+const isLogin = await nini.post('http://localhost:3000/login', {
+  email: 'qwer@gmai.com',
+  password: 'qwer',
+});
+
+console.log(isLogin.data);

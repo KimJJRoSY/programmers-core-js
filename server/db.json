@@ -1,4 +1,11 @@
 {
+  "users": [
+    {
+      "email": "qwer@gmai.com",
+      "password": "$2a$10$6A6aJ30l2pb5hWsjZDywcO8.hGbYpwJWShu0jo4ioGcupiB.GJf3.",
+      "id": 1
+    }
+  ],
   "posts": [
     {
       "id": "1",
@@ -235,6 +242,12 @@
       "username": "asd",
       "email": "sss@dd.cvo",
       "website": "asd.ke.r"
+    },
+    {
+      "id": "f871",
+      "username": "biibi",
+      "email": "bibi@gmail.co",
+      "website": "dmdmm.rlr.r"
     }
   ]
 }
